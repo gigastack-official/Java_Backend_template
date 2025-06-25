@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/javaTemplate
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+  kafka:
+    bootstrap-servers: localhost:9092
+  redis:
+    host: localhost
+    port: 6379
+
+security:
+  jwt:
+    secret: de22d1dd8ec9180c5089e1d1550c31a8a1ffade971141b8b48203bdf1ab7f850
+
+aws:
+  s3:
+    endpoint: http://localhost:9000
+    bucket: dev-bucket
+    credentials:
+      access-key: minioadmin
+      secret-key: minioadmin
+
+logging:
+  level:
+    root: DEBUG

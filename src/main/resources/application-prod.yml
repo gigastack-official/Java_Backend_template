@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate     # никаких auto-update в проде
+  kafka:
+    bootstrap-servers: ${KAFKA_SERVERS}
+  redis:
+    host: ${REDIS_HOST}
+    port: ${REDIS_PORT:6379}
+
+security:
+  jwt:
+    secret: ${JWT_SECRET}
+
+aws:
+  s3:
+    endpoint: ${S3_ENDPOINT}
+    bucket: ${S3_BUCKET}
+    credentials:
+      access-key: ${S3_ACCESS_KEY}
+      secret-key: ${S3_SECRET_KEY}
+
+logging:
+  level:
+    root: INFO
