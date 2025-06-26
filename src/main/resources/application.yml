@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: backend-template
+  datasource:
+    hikari:
+      maximum-pool-size: 10
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+  profiles:
+    default: dev
+
+
+security:
+  jwt:
+    expiration: 3600
