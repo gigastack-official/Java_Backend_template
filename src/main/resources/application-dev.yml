@@ -1,30 +1,39 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/javaTemplate
-    username: postgres
-    password: postgres
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: update
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: ${KAFKA_SERVERS}
   redis:
-    host: localhost
-    port: 6379
+    host: ${REDIS_HOST}
+    port: ${REDIS_PORT:6379}
 
 security:
   jwt:
-    secret: de22d1dd8ec9180c5089e1d1550c31a8a1ffade971141b8b48203bdf1ab7f850
+    secret: ${JWT_SECRET}
 
 aws:
   s3:
-    endpoint: http://localhost:9000
-    bucket: dev-bucket
+    endpoint: ${S3_ENDPOINT}
+    bucket: ${S3_BUCKET}
     credentials:
-      access-key: minioadmin
-      secret-key: minioadmin
+      access-key: ${S3_ACCESS_KEY}
+      secret-key: ${S3_SECRET_KEY}
+
+#logging:
+#  level:
+#    root: DEBUG
 
 logging:
   level:
-    root: DEBUG
+    root: INFO # всё, что не переопределено, станет INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.apache.tomcat: INFO
+    # DEBUG только там, где полезно
+    ru.gigastack.backend: DEBUG

@@ -7,7 +7,10 @@ spring:
   jackson:
     serialization:
       WRITE_DATES_AS_TIMESTAMPS: false
+  profiles:
+    default: dev
+
 
 security:
   jwt:
-    expiration: 3600        # сек, одинаково для всех профилей
+    expiration: 3600
