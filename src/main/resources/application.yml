@@ -12,7 +12,8 @@ spring:
   flyway:
     baseline-on-migrate: true
     baseline-version: 1
-
+  config:
+    import: "classpath:env.properties"
 security:
   jwt:
     expiration: 3600
