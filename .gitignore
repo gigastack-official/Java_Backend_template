@@ -62,6 +62,7 @@ hs_err_pid*
 replay_pid*
 
 #secrets
-.env
+src/main/resources/.env
 
 DevopsREADME.md
+/src/main/resources/env.properties
